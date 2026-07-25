@@ -556,7 +556,7 @@ function resetCalculator() {
 
 function createResultsText(results) {
   return [
-    "Selling Price Calculator Results",
+    "KESMO Pricing Calculator Results",
     "",
     `Base cost: ${formatCurrency(results.baseCost)}`,
     `Additional cost per sale: ${formatCurrency(
