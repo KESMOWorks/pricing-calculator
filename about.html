@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
@@ -15,70 +15,120 @@
     content="Learn why the KESMO Pricing Calculator was created, who it helps, and how it estimates selling prices using costs, fees, and profit margins."
   >
 
+  <meta name="author" content="KESMO">
+  <meta name="theme-color" content="#155eef">
+
+  <link
+    rel="canonical"
+    href="https://kesmoworks.github.io/pricing-calculator/about.html"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KESMO">
+  <meta property="og:locale" content="en_US">
+
   <meta
-  property="og:title"
-  content="About | KESMO Pricing Calculator"
->
+    property="og:title"
+    content="About | KESMO Pricing Calculator"
+  >
 
-<meta
-  property="og:description"
-  content="Learn why KESMO built the Pricing Calculator and how it helps estimate selling prices, fees, and profit margins."
->
+  <meta
+    property="og:description"
+    content="Learn why KESMO built the Pricing Calculator and how it helps estimate selling prices, fees, and profit margins."
+  >
 
-<meta
-  property="og:image"
-  content="https://kesmoworks.github.io/pricing-calculator/assets/kesmo-social-share.png"
->
+  <meta
+    property="og:url"
+    content="https://kesmoworks.github.io/pricing-calculator/about.html"
+  >
 
-<meta
-  property="og:url"
-  content="https://kesmoworks.github.io/pricing-calculator/about.html"
->
+  <meta
+    property="og:image"
+    content="https://kesmoworks.github.io/pricing-calculator/assets/branding/kesmo-social-share.png"
+  >
 
-<meta property="og:type" content="website">
+  <meta
+    property="og:image:alt"
+    content="KESMO Pricing Calculator — Precision made simple."
+  >
 
-<meta property="og:site_name" content="KESMO">
+  <!-- X continues to use the established Twitter Card metadata names. -->
+  <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="About | KESMO Pricing Calculator"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Learn why KESMO built the Pricing Calculator and how it helps estimate selling prices, fees, and profit margins."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://kesmoworks.github.io/pricing-calculator/assets/branding/kesmo-social-share.png"
+  >
+
+  <meta
+    name="twitter:image:alt"
+    content="KESMO Pricing Calculator — Precision made simple."
+  >
+
+  <link
+    rel="icon"
+    href="assets/branding/favicon.svg"
+    type="image/svg+xml"
+  >
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About the KESMO Pricing Calculator",
+      "description": "Information about the KESMO Pricing Calculator, who it helps, and how it estimates selling prices.",
+      "url": "https://kesmoworks.github.io/pricing-calculator/about.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "KESMO Pricing Calculator",
+        "url": "https://kesmoworks.github.io/pricing-calculator/"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "KESMO Pricing Calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any modern web browser"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KESMO",
+        "url": "https://kesmoworks.github.io/"
+      }
+    }
+  </script>
+
+  <script src="components.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="page-container">
-      <a
-  class="site-name"
-  href="index.html"
-  aria-label="KESMO Pricing Calculator home"
->
-  <img
-  src="assets/logo.svg"
-  alt=""
-  aria-hidden="true"
-  class="site-logo"
-  width="42"
-  height="42"
->
+  <div id="site-header"></div>
 
-  <span>KESMO</span>
-</a>
+  <main id="main-content">
+    <section
+      class="hero-section"
+      aria-labelledby="page-heading"
+    >
+      <div class="page-container hero-container">
+        <p class="eyebrow">
+          Precision made simple.
+        </p>
 
-      <nav class="site-navigation" aria-label="Main navigation">
-        <a href="index.html">Pricing Calculator</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero-section">
-      <div class="page-container content-container">
-        <p class="eyebrow">Precision made simple.</p>
-
-        <h1>About the Pricing Calculator</h1>
+        <h1 id="page-heading">
+          About the Pricing Calculator
+        </h1>
 
         <p class="hero-description">
           The KESMO Pricing Calculator was created to make pricing
@@ -89,36 +139,61 @@
       </div>
     </section>
 
-    <section class="content-section">
+    <section
+      class="content-section"
+      aria-labelledby="purpose-heading"
+    >
       <div class="page-container content-container">
-        <h2>What this calculator does</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            Purpose
+          </p>
 
-        <p>
-          Many people know what something costs to make, purchase,
-          or provide, but are unsure what they should actually charge.
-          Simply adding a percentage to the cost can overlook marketplace
-          fees, payment processing fees, fixed transaction charges,
-          and the desired profit margin.
-        </p>
+          <h2 id="purpose-heading">
+            What this calculator does
+          </h2>
+        </div>
 
-        <p>
-          The KESMO Pricing Calculator estimates a selling price that
-          accounts for those factors while also showing the resulting
-          profit, markup, break-even price, and maximum discount before
-          losing money.
-        </p>
+        <div class="prose-content">
+          <p>
+            Many people know what something costs to make, purchase,
+            or provide, but are unsure what they should actually charge.
+            Simply adding a percentage to the cost can overlook marketplace
+            fees, payment-processing fees, fixed transaction charges,
+            and the desired profit margin.
+          </p>
+
+          <p>
+            The KESMO Pricing Calculator estimates a selling price that
+            accounts for those factors while also showing the resulting
+            profit, markup, break-even price, and maximum discount before
+            losing money.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="content-section alternate-section">
+    <section
+      class="content-section alternate-section"
+      aria-labelledby="audience-heading"
+    >
       <div class="page-container content-container">
-        <h2>Who it is for</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            Intended users
+          </p>
 
-        <p>
-          The Pricing Calculator may be useful for:
-        </p>
+          <h2 id="audience-heading">
+            Who it is for
+          </h2>
 
-        <ul>
+          <p>
+            The calculator is designed for people who need a clearer
+            way to compare costs, fees, selling prices, and profit goals.
+          </p>
+        </div>
+
+        <ul class="check-list">
           <li>Small business owners</li>
           <li>Online marketplace sellers</li>
           <li>Freelancers</li>
@@ -130,100 +205,151 @@
       </div>
     </section>
 
-    <section class="content-section">
+    <section
+      class="content-section"
+      aria-labelledby="reason-heading"
+    >
       <div class="page-container content-container">
-        <h2>Why it was created</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            The problem
+          </p>
 
-        <p>
-          Pricing decisions often involve more than simply adding
-          a markup to a cost. Percentage-based selling fees,
-          fixed transaction charges, and desired profit margins
-          all affect the final price.
-        </p>
+          <h2 id="reason-heading">
+            Why it was created
+          </h2>
+        </div>
 
-        <p>
-          The goal of the KESMO Pricing Calculator is to perform those
-          calculations automatically while also explaining what each
-          result means.
-        </p>
+        <div class="prose-content">
+          <p>
+            Pricing decisions often involve more than simply adding
+            a markup to a cost. Percentage-based selling fees,
+            fixed transaction charges, and desired profit margins
+            all affect the final price.
+          </p>
+
+          <p>
+            The goal of the KESMO Pricing Calculator is to perform those
+            calculations automatically while also explaining what each
+            result means.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="content-section alternate-section">
+    <section
+      class="content-section alternate-section"
+      aria-labelledby="kesmo-heading"
+    >
       <div class="page-container content-container">
-        <h2>About KESMO</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            About the company
+          </p>
 
-        <p>
-          KESMO creates practical browser-based tools designed to provide
-          precise answers without unnecessary complexity.
-        </p>
+          <h2 id="kesmo-heading">
+            About KESMO
+          </h2>
+        </div>
 
-        <p>
-          The Pricing Calculator is the first KESMO tool.
-          Future tools may help with other everyday business,
-          financial, and decision-making calculations.
-        </p>
+        <div class="prose-content">
+          <p>
+            KESMO creates practical browser-based tools designed to
+            provide precise answers without unnecessary complexity.
+          </p>
+
+          <p>
+            The Pricing Calculator is the first completed KESMO tool.
+            Future tools will continue the same focus on usefulness,
+            accessibility, clarity, speed, and long-term reliability.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="content-section">
+    <section
+      class="content-section"
+      aria-labelledby="reminder-heading"
+    >
       <div class="page-container content-container">
-        <h2>Important reminder</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            Important information
+          </p>
 
-        <p>
-          Every business is different. Taxes, refunds, shipping,
-          discounts, supplier agreements, and local regulations
-          may affect actual costs and profits.
-        </p>
+          <h2 id="reminder-heading">
+            Use estimates carefully
+          </h2>
+        </div>
 
-        <p>
-          Results provided by this calculator are estimates and should
-          not replace professional financial, accounting, legal,
-          or tax advice.
-        </p>
+        <div class="prose-content">
+          <p>
+            Every business is different. Taxes, refunds, shipping,
+            discounts, supplier agreements, and local regulations
+            may affect actual costs and profits.
+          </p>
 
-        <p>
-          Always verify important business decisions independently.
-        </p>
+          <p>
+            Results provided by this calculator are estimates and should
+            not replace professional financial, accounting, legal,
+            or tax advice.
+          </p>
+
+          <p>
+            Always verify important business decisions independently.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="content-section alternate-section">
+    <section
+      class="content-section alternate-section"
+      aria-labelledby="contact-heading"
+    >
       <div class="page-container content-container">
-        <h2>Feedback</h2>
+        <div class="section-heading">
+          <p class="section-label">
+            Get in touch
+          </p>
 
-        <p>
-          The KESMO Pricing Calculator will continue to improve
-          as real users test it.
-        </p>
+          <h2 id="contact-heading">
+            Contact KESMO
+          </h2>
+        </div>
 
-        <p>
-          If you discover an incorrect result, broken feature,
-          confusing explanation, or other problem, feedback is appreciated.
-        </p>
+        <div class="prose-content">
+          <p>
+            Have a suggestion, found a bug, or want to request a new tool?
+            We’d love to hear from you.
+          </p>
 
-        <p>
-          Suggestions for future tools will be considered after the current
-          calculator has been fully published and tested.
-        </p>
+          <p>
+            <strong>Contact:</strong>
+            <a href="mailto:kesmo.support@gmail.com">
+              Contact KESMO
+            </a>
+          </p>
+
+          <p>
+            We read every message and use feedback to improve existing
+            tools, prioritize useful changes, and guide future KESMO
+            projects.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="page-container footer-content">
-      <p>
-        &copy; <span id="current-year">2026</span> KESMO
-      </p>
+  <div id="site-footer"></div>
 
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Pricing Calculator</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+  <noscript>
+    <div class="noscript-message">
+      Shared navigation requires JavaScript. You can return directly
+      to the
+      <a href="index.html">
+        Pricing Calculator
+      </a>.
     </div>
-  </footer>
-
-  <script src="script.js"></script>
+  </noscript>
 </body>
 </html>
