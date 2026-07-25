@@ -1,103 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
 
-  <title>Page Not Found | KESMO</title>
+  <title>Page Not Found | KESMO Pricing Calculator</title>
 
   <meta
     name="description"
-    content="The requested page could not be found. Return to the KESMO Pricing Calculator."
+    content="The requested page could not be found. Return to the KESMO Pricing Calculator or browse other KESMO tools."
   >
 
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="KESMO">
+  <meta name="theme-color" content="#155eef">
+
+  <!--
+    Ensures relative styles, scripts, images, and links work when
+    GitHub Pages serves this file for any nonexistent project URL.
+  -->
+  <base href="https://kesmoworks.github.io/pricing-calculator/">
+
+  <link
+    rel="icon"
+    href="assets/branding/favicon.svg"
+    type="image/svg+xml"
+  >
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <script src="components.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="page-container">
-      <a
-        class="site-name"
-        href="index.html"
-        aria-label="KESMO Home"
-      >
-        <img
-          src="assets/logo.svg"
-          alt=""
-          aria-hidden="true"
-          class="site-logo"
-          width="42"
-          height="42"
-        >
+  <div id="site-header"></div>
 
-        <span>KESMO</span>
-      </a>
+  <main id="main-content">
+    <div
+      id="page-hero"
+      data-eyebrow="Error 404"
+      data-title="We couldn’t find that page."
+      data-description="The page may have moved, been renamed, or no longer exist. You can return to the Pricing Calculator or browse the available KESMO tools."
+    ></div>
 
-      <nav class="site-navigation" aria-label="Main navigation">
-        <a href="index.html">Pricing Calculator</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero-section">
+    <section
+      class="content-section"
+      aria-labelledby="options-heading"
+    >
       <div class="page-container content-container">
-        <p class="eyebrow">Precision made simple.</p>
+        <div class="section-heading">
+          <p class="section-label">
+            Helpful destinations
+          </p>
 
-        <h1>Page Not Found</h1>
+          <h2 id="options-heading">
+            Choose where to go next
+          </h2>
 
-        <p class="hero-description">
-          The page you requested may have moved, been renamed,
-          or never existed.
-        </p>
+          <p>
+            Return to the Pricing Calculator, learn more about KESMO,
+            or review the project’s privacy information.
+          </p>
+        </div>
 
-        <p>
-          <a
-            class="button button-primary"
-            href="index.html"
-          >
-            Return to Pricing Calculator
-          </a>
-        </p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>
+              Pricing Calculator
+            </h3>
+
+            <p>
+              Return to the calculator and estimate a selling price
+              based on costs, fees, and profit goals.
+            </p>
+
+            <p>
+              <a href="index.html">
+                Open the Pricing Calculator
+              </a>
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>
+              All KESMO Tools
+            </h3>
+
+            <p>
+              Browse the complete collection of available KESMO tools.
+            </p>
+
+            <p>
+              <a href="https://kesmoworks.github.io/">
+                Explore KESMO tools
+              </a>
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>
+              About KESMO
+            </h3>
+
+            <p>
+              Learn about KESMO and our approach to dependable software.
+            </p>
+
+            <p>
+              <a href="about.html">
+                Read about KESMO
+              </a>
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>
+              Privacy
+            </h3>
+
+            <p>
+              Review how the Pricing Calculator approaches privacy
+              and data handling.
+            </p>
+
+            <p>
+              <a href="privacy.html">
+                Read the Privacy Policy
+              </a>
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="content-section">
-      <div class="page-container content-container">
-        <h2>Looking for something useful?</h2>
+    <section
+      class="callout-section"
+      aria-labelledby="callout-heading"
+    >
+      <div class="page-container callout-container">
+        <div>
+          <p class="section-label">
+            KESMO
+          </p>
 
-        <p>
-          Use the KESMO Pricing Calculator to estimate a selling price
-          based on costs, transaction fees, and your desired profit margin.
-        </p>
+          <h2 id="callout-heading">
+            Practical tools built to be fast, clear, and dependable.
+          </h2>
+        </div>
+
+        <a
+          class="button button-light"
+          href="index.html"
+        >
+          Return to Pricing Calculator
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="page-container footer-content">
-      <p>
-        &copy; <span id="current-year">2026</span> KESMO
-      </p>
+  <div id="site-footer"></div>
 
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Pricing Calculator</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+  <noscript>
+    <div class="noscript-message">
+      Shared navigation requires JavaScript. You can return directly
+      to the <a href="index.html">Pricing Calculator</a>.
     </div>
-  </footer>
-
-  <script src="script.js"></script>
+  </noscript>
 </body>
 </html>
