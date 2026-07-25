@@ -161,6 +161,13 @@ main {
   text-decoration: none;
 }
 
+.site-logo {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: block;
+}
+
 .site-name:hover {
   color: var(--color-primary-dark);
 }
