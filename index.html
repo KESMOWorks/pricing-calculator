@@ -8,12 +8,24 @@
     content="width=device-width, initial-scale=1"
   >
 
-  <title>Selling Price Calculator with Fees and Target Profit Margin</title>
+  <title>Pricing Calculator with Fees and Profit Margin | KESMO</title>
 
   <meta
     name="description"
-    content="Calculate the selling price needed to cover costs, transaction fees, and your target profit margin. See profit, markup, break-even price, and maximum safe discount."
+    content="Use the free KESMO Pricing Calculator to calculate the selling price needed to cover costs, transaction fees, and your target profit margin."
   >
+
+  <meta
+    property="og:title"
+    content="Pricing Calculator with Fees and Profit Margin | KESMO"
+  >
+
+  <meta
+    property="og:description"
+    content="Calculate the price needed to cover costs, selling fees, and your desired profit margin."
+  >
+
+  <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,12 +33,16 @@
 <body>
   <header class="site-header">
     <div class="page-container">
-      <a class="site-name" href="index.html">
-        Selling Price Calculator
+      <a
+        class="site-name"
+        href="index.html"
+        aria-label="KESMO Pricing Calculator home"
+      >
+        KESMO
       </a>
 
       <nav class="site-navigation" aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Calculator</a>
+        <a href="index.html" aria-current="page">Pricing Calculator</a>
         <a href="about.html">About</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -36,14 +52,13 @@
   <main>
     <section class="hero-section">
       <div class="page-container">
-        <p class="eyebrow">Free browser-based pricing tool</p>
+        <p class="eyebrow">Precision made simple.</p>
 
-        <h1>What Price Should I Charge?</h1>
+        <h1>Pricing Calculator</h1>
 
         <p class="hero-description">
-          Enter your costs, transaction fees, and desired profit margin.
-          The calculator will estimate the selling price you need to charge
-          to reach your target.
+          Calculate the selling price needed to cover your costs,
+          transaction fees, and desired profit margin.
         </p>
 
         <p class="privacy-note">
@@ -60,10 +75,14 @@
         <div class="calculator-panel input-panel">
           <div class="section-heading">
             <p class="section-number">Step 1</p>
-            <h2 id="calculator-heading">Enter your costs and goal</h2>
+
+            <h2 id="calculator-heading">
+              Enter your costs and profit goal
+            </h2>
+
             <p>
               Required fields are marked with an asterisk.
-              Optional blank fields will be treated as zero.
+              Optional blank fields are treated as zero.
             </p>
           </div>
 
@@ -265,9 +284,13 @@
         >
           <div class="section-heading">
             <p class="section-number">Step 2</p>
-            <h2 id="results-heading">Review your results</h2>
+
+            <h2 id="results-heading">
+              Review your pricing results
+            </h2>
+
             <p>
-              Results will update automatically as you enter valid values.
+              Results update automatically as you enter valid values.
             </p>
           </div>
 
@@ -308,6 +331,7 @@
               <article class="result-card">
                 <p class="result-label">Total fixed costs</p>
                 <p id="total-fixed-costs" class="result-value">$0.00</p>
+
                 <p class="result-explanation">
                   Base cost, additional cost, and fixed transaction fee.
                 </p>
@@ -316,6 +340,7 @@
               <article class="result-card">
                 <p class="result-label">Percentage-based fees</p>
                 <p id="percentage-fee-amount" class="result-value">$0.00</p>
+
                 <p class="result-explanation">
                   The fee calculated as a percentage of the selling price.
                 </p>
@@ -324,6 +349,7 @@
               <article class="result-card">
                 <p class="result-label">Total costs and fees</p>
                 <p id="total-costs-and-fees" class="result-value">$0.00</p>
+
                 <p class="result-explanation">
                   The complete estimated cost of making the sale.
                 </p>
@@ -332,6 +358,7 @@
               <article class="result-card">
                 <p class="result-label">Profit per sale</p>
                 <p id="profit-per-sale" class="result-value">$0.00</p>
+
                 <p class="result-explanation">
                   The amount remaining after all entered costs and fees.
                 </p>
@@ -340,6 +367,7 @@
               <article class="result-card">
                 <p class="result-label">Actual profit margin</p>
                 <p id="actual-margin" class="result-value">0.00%</p>
+
                 <p class="result-explanation">
                   Profit shown as a percentage of the recommended price.
                 </p>
@@ -348,6 +376,7 @@
               <article class="result-card">
                 <p class="result-label">Equivalent markup</p>
                 <p id="equivalent-markup" class="result-value">0.00%</p>
+
                 <p class="result-explanation">
                   Profit shown as a percentage of total costs and fees.
                 </p>
@@ -356,6 +385,7 @@
               <article class="result-card">
                 <p class="result-label">Break-even selling price</p>
                 <p id="break-even-price" class="result-value">$0.00</p>
+
                 <p class="result-explanation">
                   The estimated minimum price needed to avoid a loss.
                 </p>
@@ -418,12 +448,13 @@
       aria-labelledby="formula-heading"
     >
       <div class="page-container content-container">
-        <h2 id="formula-heading">How the selling price is calculated</h2>
+        <h2 id="formula-heading">
+          How the recommended selling price is calculated
+        </h2>
 
         <p>
-          The recommended selling price must cover your fixed costs,
-          the fixed transaction fee, the percentage-based fee, and
-          your desired profit margin.
+          The recommended price must cover your fixed costs, fixed
+          transaction fee, percentage-based fee, and desired profit margin.
         </p>
 
         <div class="formula-box">
@@ -449,7 +480,9 @@
       aria-labelledby="example-heading"
     >
       <div class="page-container content-container">
-        <h2 id="example-heading">Example selling price calculation</h2>
+        <h2 id="example-heading">
+          Example pricing calculation
+        </h2>
 
         <p>Suppose you enter the following values:</p>
 
@@ -527,7 +560,8 @@
             <p>
               Add your fixed costs and fixed transaction fee, then divide
               that total by one minus the percentage fee and desired margin.
-              This calculator performs that calculation automatically.
+              The KESMO Pricing Calculator performs that calculation
+              automatically.
             </p>
           </details>
 
@@ -544,7 +578,9 @@
           </details>
 
           <details>
-            <summary>How do transaction fees affect profit?</summary>
+            <summary>
+              How do transaction fees affect profit?
+            </summary>
 
             <p>
               Fixed transaction fees add the same cost to every sale.
@@ -554,7 +590,9 @@
           </details>
 
           <details>
-            <summary>What is a break-even selling price?</summary>
+            <summary>
+              What is a break-even selling price?
+            </summary>
 
             <p>
               The break-even price is the estimated selling price that covers
@@ -611,12 +649,11 @@
   <footer class="site-footer">
     <div class="page-container footer-content">
       <p>
-        &copy; <span id="current-year">2026</span>
-        Selling Price Calculator
+        &copy; <span id="current-year">2026</span> KESMO
       </p>
 
       <nav aria-label="Footer navigation">
-        <a href="index.html">Calculator</a>
+        <a href="index.html">Pricing Calculator</a>
         <a href="about.html">About</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -625,8 +662,8 @@
 
   <noscript>
     <div class="noscript-message">
-      This calculator requires JavaScript to calculate pricing results.
-      Please enable JavaScript in your browser.
+      The KESMO Pricing Calculator requires JavaScript to calculate
+      pricing results. Please enable JavaScript in your browser.
     </div>
   </noscript>
 
