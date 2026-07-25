@@ -988,7 +988,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .footer-brand p a {
   color: var(--color-link);
-  font-weight: var(--font-weight-semibold);
 }
 
 .footer-brand p a:hover {
