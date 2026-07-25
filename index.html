@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Selling Price Calculator with Fees and Target Profit Margin</title>
+
+  <meta
+    name="description"
+    content="Calculate the selling price needed to cover costs, transaction fees, and your target profit margin. See profit, markup, break-even price, and maximum safe discount."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="page-container">
+      <a class="site-name" href="index.html">
+        Selling Price Calculator
+      </a>
+
+      <nav class="site-navigation" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="page-container">
+        <p class="eyebrow">Free browser-based pricing tool</p>
+
+        <h1>What Price Should I Charge?</h1>
+
+        <p class="hero-description">
+          Enter your costs, transaction fees, and desired profit margin.
+          The calculator will estimate the selling price you need to charge
+          to reach your target.
+        </p>
+
+        <p class="privacy-note">
+          Your entries stay in your browser and are not saved by this website.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="calculator-section"
+      aria-labelledby="calculator-heading"
+    >
+      <div class="page-container calculator-layout">
+        <div class="calculator-panel input-panel">
+          <div class="section-heading">
+            <p class="section-number">Step 1</p>
+            <h2 id="calculator-heading">Enter your costs and goal</h2>
+            <p>
+              Required fields are marked with an asterisk.
+              Optional blank fields will be treated as zero.
+            </p>
+          </div>
+
+          <form id="calculator-form" novalidate>
+            <div class="form-group">
+              <label for="base-cost">
+                Base cost
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <p class="field-help" id="base-cost-help">
+                The amount you pay to make, purchase, or provide the item
+                or service.
+              </p>
+
+              <div class="input-wrapper money-input">
+                <span class="input-prefix" aria-hidden="true">$</span>
+
+                <input
+                  id="base-cost"
+                  name="baseCost"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  placeholder="50.00"
+                  aria-describedby="base-cost-help base-cost-error"
+                  required
+                >
+              </div>
+
+              <p
+                class="field-error"
+                id="base-cost-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="form-group">
+              <label for="additional-cost">
+                Additional cost per sale
+              </label>
+
+              <p class="field-help" id="additional-cost-help">
+                Include packaging, shipping supplies, per-order labor,
+                or other costs tied to one sale.
+              </p>
+
+              <div class="input-wrapper money-input">
+                <span class="input-prefix" aria-hidden="true">$</span>
+
+                <input
+                  id="additional-cost"
+                  name="additionalCost"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  placeholder="0.00"
+                  aria-describedby="additional-cost-help additional-cost-error"
+                >
+              </div>
+
+              <p
+                class="field-error"
+                id="additional-cost-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="form-group">
+              <label for="percentage-fee">
+                Percentage-based fee
+              </label>
+
+              <p class="field-help" id="percentage-fee-help">
+                Enter the percentage charged by a marketplace,
+                payment processor, or selling platform.
+              </p>
+
+              <div class="input-wrapper percentage-input">
+                <input
+                  id="percentage-fee"
+                  name="percentageFee"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  placeholder="10"
+                  aria-describedby="percentage-fee-help percentage-fee-error"
+                >
+
+                <span class="input-suffix" aria-hidden="true">%</span>
+              </div>
+
+              <p
+                class="field-error"
+                id="percentage-fee-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="form-group">
+              <label for="fixed-fee">
+                Fixed fee per transaction
+              </label>
+
+              <p class="field-help" id="fixed-fee-help">
+                Enter any flat amount charged each time a sale is completed.
+              </p>
+
+              <div class="input-wrapper money-input">
+                <span class="input-prefix" aria-hidden="true">$</span>
+
+                <input
+                  id="fixed-fee"
+                  name="fixedFee"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  placeholder="0.30"
+                  aria-describedby="fixed-fee-help fixed-fee-error"
+                >
+              </div>
+
+              <p
+                class="field-error"
+                id="fixed-fee-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="form-group">
+              <label for="desired-margin">
+                Desired profit margin
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <p class="field-help" id="desired-margin-help">
+                This is the percentage of the final selling price
+                you want to keep as profit.
+              </p>
+
+              <div class="input-wrapper percentage-input">
+                <input
+                  id="desired-margin"
+                  name="desiredMargin"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="0.01"
+                  placeholder="20"
+                  aria-describedby="desired-margin-help desired-margin-error"
+                  required
+                >
+
+                <span class="input-suffix" aria-hidden="true">%</span>
+              </div>
+
+              <p
+                class="field-error"
+                id="desired-margin-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div
+              id="form-message"
+              class="form-message"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            ></div>
+
+            <div class="button-group">
+              <button
+                id="load-example-button"
+                class="button button-secondary"
+                type="button"
+              >
+                Load example
+              </button>
+
+              <button
+                id="reset-button"
+                class="button button-quiet"
+                type="reset"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="calculator-panel results-panel"
+          aria-labelledby="results-heading"
+        >
+          <div class="section-heading">
+            <p class="section-number">Step 2</p>
+            <h2 id="results-heading">Review your results</h2>
+            <p>
+              Results will update automatically as you enter valid values.
+            </p>
+          </div>
+
+          <div
+            id="results-placeholder"
+            class="results-placeholder"
+          >
+            <p>
+              Enter a base cost and desired profit margin to see
+              your recommended selling price.
+            </p>
+          </div>
+
+          <div
+            id="calculator-results"
+            class="calculator-results"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            <article class="primary-result">
+              <p class="result-label">Recommended selling price</p>
+
+              <p
+                id="recommended-price"
+                class="result-value result-value-large"
+              >
+                $0.00
+              </p>
+
+              <p class="result-explanation">
+                The estimated price needed to cover your entered costs
+                and fees while reaching your desired profit margin.
+              </p>
+            </article>
+
+            <div class="results-grid">
+              <article class="result-card">
+                <p class="result-label">Total fixed costs</p>
+                <p id="total-fixed-costs" class="result-value">$0.00</p>
+                <p class="result-explanation">
+                  Base cost, additional cost, and fixed transaction fee.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Percentage-based fees</p>
+                <p id="percentage-fee-amount" class="result-value">$0.00</p>
+                <p class="result-explanation">
+                  The fee calculated as a percentage of the selling price.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Total costs and fees</p>
+                <p id="total-costs-and-fees" class="result-value">$0.00</p>
+                <p class="result-explanation">
+                  The complete estimated cost of making the sale.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Profit per sale</p>
+                <p id="profit-per-sale" class="result-value">$0.00</p>
+                <p class="result-explanation">
+                  The amount remaining after all entered costs and fees.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Actual profit margin</p>
+                <p id="actual-margin" class="result-value">0.00%</p>
+                <p class="result-explanation">
+                  Profit shown as a percentage of the recommended price.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Equivalent markup</p>
+                <p id="equivalent-markup" class="result-value">0.00%</p>
+                <p class="result-explanation">
+                  Profit shown as a percentage of total costs and fees.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">Break-even selling price</p>
+                <p id="break-even-price" class="result-value">$0.00</p>
+                <p class="result-explanation">
+                  The estimated minimum price needed to avoid a loss.
+                </p>
+              </article>
+
+              <article class="result-card">
+                <p class="result-label">
+                  Maximum discount before losing money
+                </p>
+
+                <p
+                  id="maximum-discount-amount"
+                  class="result-value"
+                >
+                  $0.00
+                </p>
+
+                <p
+                  id="maximum-discount-percentage"
+                  class="result-secondary-value"
+                >
+                  0.00% of the recommended price
+                </p>
+
+                <p class="result-explanation">
+                  The estimated discount available before reaching
+                  the break-even price.
+                </p>
+              </article>
+            </div>
+
+            <div class="results-actions">
+              <button
+                id="copy-results-button"
+                class="button button-primary"
+                type="button"
+              >
+                Copy results
+              </button>
+
+              <p
+                id="copy-status"
+                class="copy-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <p class="rounding-note">
+              Results are estimates rounded for display. Verify important
+              business pricing decisions independently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="content-section"
+      aria-labelledby="formula-heading"
+    >
+      <div class="page-container content-container">
+        <h2 id="formula-heading">How the selling price is calculated</h2>
+
+        <p>
+          The recommended selling price must cover your fixed costs,
+          the fixed transaction fee, the percentage-based fee, and
+          your desired profit margin.
+        </p>
+
+        <div class="formula-box">
+          <p class="formula-title">Recommended selling price</p>
+
+          <p class="formula">
+            (Base cost + Additional cost + Fixed fee)
+            ÷
+            (1 − Percentage fee − Desired margin)
+          </p>
+        </div>
+
+        <p>
+          Percentage-based fees cannot simply be added to your fixed costs.
+          The fee depends on the final selling price, so the formula must
+          account for that relationship.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="content-section alternate-section"
+      aria-labelledby="example-heading"
+    >
+      <div class="page-container content-container">
+        <h2 id="example-heading">Example selling price calculation</h2>
+
+        <p>Suppose you enter the following values:</p>
+
+        <dl class="example-values">
+          <div>
+            <dt>Base cost</dt>
+            <dd>$50.00</dd>
+          </div>
+
+          <div>
+            <dt>Additional cost</dt>
+            <dd>$0.00</dd>
+          </div>
+
+          <div>
+            <dt>Percentage fee</dt>
+            <dd>10%</dd>
+          </div>
+
+          <div>
+            <dt>Fixed fee</dt>
+            <dd>$0.00</dd>
+          </div>
+
+          <div>
+            <dt>Desired margin</dt>
+            <dd>20%</dd>
+          </div>
+        </dl>
+
+        <p>
+          The recommended selling price is approximately
+          <strong>$71.43</strong>. At that price, the percentage fee is
+          approximately <strong>$7.14</strong>, and the estimated profit
+          is approximately <strong>$14.29</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="content-section"
+      aria-labelledby="margin-markup-heading"
+    >
+      <div class="page-container content-container">
+        <h2 id="margin-markup-heading">
+          What is the difference between margin and markup?
+        </h2>
+
+        <p>
+          Profit margin measures profit as a percentage of the selling price.
+          Markup measures profit as a percentage of cost. They are related,
+          but they are not the same.
+        </p>
+
+        <p>
+          For example, if an item costs $80 and sells for $100, the profit
+          is $20. The profit margin is 20%, but the markup is 25%.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="content-section alternate-section"
+      aria-labelledby="faq-heading"
+    >
+      <div class="page-container content-container">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <div class="faq-list">
+          <details>
+            <summary>
+              What price should I charge for a target profit margin?
+            </summary>
+
+            <p>
+              Add your fixed costs and fixed transaction fee, then divide
+              that total by one minus the percentage fee and desired margin.
+              This calculator performs that calculation automatically.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              What is the difference between markup and margin?
+            </summary>
+
+            <p>
+              Margin compares profit with the selling price. Markup compares
+              profit with cost. A 30% markup therefore does not create a
+              30% profit margin.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do transaction fees affect profit?</summary>
+
+            <p>
+              Fixed transaction fees add the same cost to every sale.
+              Percentage-based fees increase as the selling price increases.
+              Both reduce the amount you keep as profit.
+            </p>
+          </details>
+
+          <details>
+            <summary>What is a break-even selling price?</summary>
+
+            <p>
+              The break-even price is the estimated selling price that covers
+              all entered costs and fees without producing a profit or loss.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              How much can I discount without losing money?
+            </summary>
+
+            <p>
+              The maximum safe discount is the difference between the
+              recommended selling price and the break-even price. The
+              calculator displays this difference as both a dollar amount
+              and a percentage.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Why is a 30% markup not the same as a 30% margin?
+            </summary>
+
+            <p>
+              A 30% markup is calculated from cost, while a 30% margin is
+              calculated from the selling price. A 30% margin requires a
+              higher selling price than a 30% markup.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="content-section disclaimer-section"
+      aria-labelledby="disclaimer-heading"
+    >
+      <div class="page-container content-container">
+        <h2 id="disclaimer-heading">Important note</h2>
+
+        <p>
+          This calculator provides estimates for general informational
+          purposes. Actual costs, taxes, refunds, discounts, shipping charges,
+          and platform rules may affect your final profit. Verify important
+          pricing decisions using the terms and fee schedules that apply to
+          your business.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container footer-content">
+      <p>
+        &copy; <span id="current-year">2026</span>
+        Selling Price Calculator
+      </p>
+
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript-message">
+      This calculator requires JavaScript to calculate pricing results.
+      Please enable JavaScript in your browser.
+    </div>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
