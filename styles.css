@@ -943,6 +943,63 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* =========================================================
+   Shared legal content
+   ========================================================= */
+
+.legal-content {
+  max-width: var(--reading-width);
+  margin-inline: auto;
+}
+
+.legal-content section {
+  margin-top: var(--space-10);
+}
+
+.legal-content section:first-of-type {
+  margin-top: var(--space-8);
+}
+
+.legal-content h2 {
+  margin-bottom: var(--space-4);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--color-text-muted);
+}
+
+.legal-updated {
+  margin-bottom: var(--space-8);
+  padding: var(--space-4);
+  border-left: 0.25rem solid var(--color-brand-700);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand-050);
+  color: var(--color-slate-800);
+}
+
+.legal-updated strong {
+  color: var(--color-slate-950);
+}
+
+.legal-notice {
+  margin-top: var(--space-12);
+  padding: var(--space-6);
+  border: 1px solid var(--color-brand-600);
+  border-radius: var(--radius-lg);
+  background: var(--color-brand-050);
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-notice h2 {
+  color: var(--color-brand-900);
+}
+
+.legal-notice p {
+  color: var(--color-slate-700);
+}
+
+/* =========================================================
    15. Footer
    ========================================================= */
 
