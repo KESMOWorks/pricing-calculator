@@ -158,9 +158,7 @@ function createSiteFooter() {
 
           <p>
             Questions or suggestions?
-            <a href="mailto:${KESMO_CONFIG.supportEmail}">
-              Email KESMO
-            </a>.
+            <a href="mailto:${KESMO_CONFIG.supportEmail}">Email KESMO</a>.
           </p>
         </div>
 
