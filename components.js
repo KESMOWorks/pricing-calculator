@@ -67,6 +67,20 @@ function getAriaCurrent(pageName) {
 }
 
 /**
+ * Escapes text before inserting it into generated HTML.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+function escapeHtml(value) {
+  const temporaryElement = document.createElement("div");
+
+  temporaryElement.textContent = value;
+
+  return temporaryElement.innerHTML;
+}
+
+/**
  * Creates the shared KESMO site header.
  *
  * @returns {string}
@@ -120,6 +134,71 @@ function createSiteHeader() {
         </nav>
       </div>
     </header>
+  `;
+}
+
+/**
+ * Creates a consistent KESMO page hero from a placeholder's
+ * data attributes.
+ *
+ * Supported attributes:
+ *
+ * data-eyebrow
+ * data-title
+ * data-description
+ * data-note
+ *
+ * @param {HTMLElement} element
+ * @returns {string}
+ */
+function createPageHero(element) {
+  const eyebrow =
+    element.dataset.eyebrow || KESMO_CONFIG.tagline;
+
+  const title =
+    element.dataset.title || KESMO_CONFIG.projectName;
+
+  const description =
+    element.dataset.description || "";
+
+  const note =
+    element.dataset.note || "";
+
+  const descriptionMarkup = description
+    ? `
+        <p class="hero-description">
+          ${escapeHtml(description)}
+        </p>
+      `
+    : "";
+
+  const noteMarkup = note
+    ? `
+        <p class="privacy-note">
+          ${escapeHtml(note)}
+        </p>
+      `
+    : "";
+
+  return `
+    <section
+      class="hero-section"
+      aria-labelledby="page-heading"
+    >
+      <div class="page-container hero-container">
+        <p class="eyebrow">
+          ${escapeHtml(eyebrow)}
+        </p>
+
+        <h1 id="page-heading">
+          ${escapeHtml(title)}
+        </h1>
+
+        ${descriptionMarkup}
+
+        ${noteMarkup}
+      </div>
+    </section>
   `;
 }
 
@@ -193,7 +272,7 @@ function createSiteFooter() {
 }
 
 /**
- * Inserts a shared component into an existing page placeholder.
+ * Inserts generated markup into an existing page placeholder.
  *
  * @param {string} elementId
  * @param {string} markup
@@ -209,10 +288,24 @@ function renderComponent(elementId, markup) {
 }
 
 /**
+ * Renders the shared hero when the page contains its placeholder.
+ */
+function renderPageHero() {
+  const heroElement = document.getElementById("page-hero");
+
+  if (!heroElement) {
+    return;
+  }
+
+  heroElement.innerHTML = createPageHero(heroElement);
+}
+
+/**
  * Initializes all shared KESMO components.
  */
 function initializeComponents() {
   renderComponent("site-header", createSiteHeader());
+  renderPageHero();
   renderComponent("site-footer", createSiteFooter());
 }
 
