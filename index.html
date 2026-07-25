@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
@@ -15,6 +15,18 @@
     content="Use the free KESMO Pricing Calculator to calculate the selling price needed to cover costs, transaction fees, and your target profit margin."
   >
 
+  <meta name="author" content="KESMO">
+  <meta name="theme-color" content="#155eef">
+
+  <link
+    rel="canonical"
+    href="https://kesmoworks.github.io/pricing-calculator/"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KESMO">
+  <meta property="og:locale" content="en_US">
+
   <meta
     property="og:title"
     content="KESMO Pricing Calculator"
@@ -26,58 +38,76 @@
   >
 
   <meta
-    property="og:image"
-    content="https://kesmoworks.github.io/pricing-calculator/assets/kesmo-social-share.png"
-  >
-
-  <meta
     property="og:url"
     content="https://kesmoworks.github.io/pricing-calculator/"
   >
 
-  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://kesmoworks.github.io/pricing-calculator/assets/branding/kesmo-social-share.png"
+  >
 
-  <meta property="og:site_name" content="KESMO">
+  <meta
+    property="og:image:alt"
+    content="KESMO Pricing Calculator — Precision made simple."
+  >
 
+  <!-- X continues to use the established Twitter Card metadata names. -->
   <meta name="twitter:card" content="summary_large_image">
 
+  <meta
+    name="twitter:title"
+    content="KESMO Pricing Calculator"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Free pricing calculator for selling prices, profit margins, marketplace fees, and break-even analysis."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://kesmoworks.github.io/pricing-calculator/assets/branding/kesmo-social-share.png"
+  >
+
+  <meta
+    name="twitter:image:alt"
+    content="KESMO Pricing Calculator — Precision made simple."
+  >
+
+  <link
+    rel="icon"
+    href="assets/branding/favicon.svg"
+    type="image/svg+xml"
+  >
+
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="google-site-verification" content="y9FbTKrU1-zomnUh6evbxn5hYtoQRTHWEYFOfh0wg40" />
+
+  <meta
+    name="google-site-verification"
+    content="y9FbTKrU1-zomnUh6evbxn5hYtoQRTHWEYFOfh0wg40"
+  >
+
+  <script src="components.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="page-container">
-      <a class="site-name" href="index.html" aria-label="KESMO Home">
+  <div id="site-header"></div>
 
-    <img
-  src="assets/logo.svg"
-  alt=""
-  aria-hidden="true"
-  class="site-logo"
-  width="42"
-  height="42"
->
-
-    <span>KESMO</span>
-
-</a>
-
-      <nav class="site-navigation" aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Pricing Calculator</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero-section">
+  <main id="main-content">
+    <section
+      class="hero-section"
+      aria-labelledby="page-heading"
+    >
       <div class="page-container">
-        <p class="eyebrow">Precision made simple.</p>
+        <p class="eyebrow">
+          Precision made simple.
+        </p>
 
-        <h1>Pricing Calculator</h1>
+        <h1 id="page-heading">
+          Pricing Calculator
+        </h1>
 
         <p class="hero-description">
           Calculate the selling price needed to cover your costs,
@@ -97,7 +127,9 @@
       <div class="page-container calculator-layout">
         <div class="calculator-panel input-panel">
           <div class="section-heading">
-            <p class="section-number">Step 1</p>
+            <p class="section-number">
+              Step 1
+            </p>
 
             <h2 id="calculator-heading">
               Enter your costs and profit goal
@@ -122,7 +154,9 @@
               </p>
 
               <div class="input-wrapper money-input">
-                <span class="input-prefix" aria-hidden="true">$</span>
+                <span class="input-prefix" aria-hidden="true">
+                  $
+                </span>
 
                 <input
                   id="base-cost"
@@ -155,7 +189,9 @@
               </p>
 
               <div class="input-wrapper money-input">
-                <span class="input-prefix" aria-hidden="true">$</span>
+                <span class="input-prefix" aria-hidden="true">
+                  $
+                </span>
 
                 <input
                   id="additional-cost"
@@ -198,7 +234,9 @@
                   aria-describedby="percentage-fee-help percentage-fee-error"
                 >
 
-                <span class="input-suffix" aria-hidden="true">%</span>
+                <span class="input-suffix" aria-hidden="true">
+                  %
+                </span>
               </div>
 
               <p
@@ -218,7 +256,9 @@
               </p>
 
               <div class="input-wrapper money-input">
-                <span class="input-prefix" aria-hidden="true">$</span>
+                <span class="input-prefix" aria-hidden="true">
+                  $
+                </span>
 
                 <input
                   id="fixed-fee"
@@ -263,7 +303,9 @@
                   required
                 >
 
-                <span class="input-suffix" aria-hidden="true">%</span>
+                <span class="input-suffix" aria-hidden="true">
+                  %
+                </span>
               </div>
 
               <p
@@ -306,7 +348,9 @@
           aria-labelledby="results-heading"
         >
           <div class="section-heading">
-            <p class="section-number">Step 2</p>
+            <p class="section-number">
+              Step 2
+            </p>
 
             <h2 id="results-heading">
               Review your pricing results
@@ -335,7 +379,9 @@
             hidden
           >
             <article class="primary-result">
-              <p class="result-label">Recommended selling price</p>
+              <p class="result-label">
+                Recommended selling price
+              </p>
 
               <p
                 id="recommended-price"
@@ -352,8 +398,13 @@
 
             <div class="results-grid">
               <article class="result-card">
-                <p class="result-label">Total fixed costs</p>
-                <p id="total-fixed-costs" class="result-value">$0.00</p>
+                <p class="result-label">
+                  Total fixed costs
+                </p>
+
+                <p id="total-fixed-costs" class="result-value">
+                  $0.00
+                </p>
 
                 <p class="result-explanation">
                   Base cost, additional cost, and fixed transaction fee.
@@ -361,8 +412,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Percentage-based fees</p>
-                <p id="percentage-fee-amount" class="result-value">$0.00</p>
+                <p class="result-label">
+                  Percentage-based fees
+                </p>
+
+                <p id="percentage-fee-amount" class="result-value">
+                  $0.00
+                </p>
 
                 <p class="result-explanation">
                   The fee calculated as a percentage of the selling price.
@@ -370,8 +426,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Total costs and fees</p>
-                <p id="total-costs-and-fees" class="result-value">$0.00</p>
+                <p class="result-label">
+                  Total costs and fees
+                </p>
+
+                <p id="total-costs-and-fees" class="result-value">
+                  $0.00
+                </p>
 
                 <p class="result-explanation">
                   The complete estimated cost of making the sale.
@@ -379,8 +440,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Profit per sale</p>
-                <p id="profit-per-sale" class="result-value">$0.00</p>
+                <p class="result-label">
+                  Profit per sale
+                </p>
+
+                <p id="profit-per-sale" class="result-value">
+                  $0.00
+                </p>
 
                 <p class="result-explanation">
                   The amount remaining after all entered costs and fees.
@@ -388,8 +454,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Actual profit margin</p>
-                <p id="actual-margin" class="result-value">0.00%</p>
+                <p class="result-label">
+                  Actual profit margin
+                </p>
+
+                <p id="actual-margin" class="result-value">
+                  0.00%
+                </p>
 
                 <p class="result-explanation">
                   Profit shown as a percentage of the recommended price.
@@ -397,8 +468,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Equivalent markup</p>
-                <p id="equivalent-markup" class="result-value">0.00%</p>
+                <p class="result-label">
+                  Equivalent markup
+                </p>
+
+                <p id="equivalent-markup" class="result-value">
+                  0.00%
+                </p>
 
                 <p class="result-explanation">
                   Profit shown as a percentage of total costs and fees.
@@ -406,8 +482,13 @@
               </article>
 
               <article class="result-card">
-                <p class="result-label">Break-even selling price</p>
-                <p id="break-even-price" class="result-value">$0.00</p>
+                <p class="result-label">
+                  Break-even selling price
+                </p>
+
+                <p id="break-even-price" class="result-value">
+                  $0.00
+                </p>
 
                 <p class="result-explanation">
                   The estimated minimum price needed to avoid a loss.
@@ -481,7 +562,9 @@
         </p>
 
         <div class="formula-box">
-          <p class="formula-title">Recommended selling price</p>
+          <p class="formula-title">
+            Recommended selling price
+          </p>
 
           <p class="formula">
             (Base cost + Additional cost + Fixed fee)
@@ -507,7 +590,9 @@
           Example pricing calculation
         </h2>
 
-        <p>Suppose you enter the following values:</p>
+        <p>
+          Suppose you enter the following values:
+        </p>
 
         <dl class="example-values">
           <div>
@@ -572,7 +657,9 @@
       aria-labelledby="faq-heading"
     >
       <div class="page-container content-container">
-        <h2 id="faq-heading">Frequently asked questions</h2>
+        <h2 id="faq-heading">
+          Frequently asked questions
+        </h2>
 
         <div class="faq-list">
           <details>
@@ -656,7 +743,9 @@
       aria-labelledby="disclaimer-heading"
     >
       <div class="page-container content-container">
-        <h2 id="disclaimer-heading">Important note</h2>
+        <h2 id="disclaimer-heading">
+          Important note
+        </h2>
 
         <p>
           This calculator provides estimates for general informational
@@ -669,19 +758,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="page-container footer-content">
-      <p>
-        &copy; <span id="current-year">2026</span> KESMO
-      </p>
-
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Pricing Calculator</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <noscript>
     <div class="noscript-message">
@@ -689,7 +766,5 @@
       pricing results. Please enable JavaScript in your browser.
     </div>
   </noscript>
-
-  <script src="script.js"></script>
 </body>
 </html>
