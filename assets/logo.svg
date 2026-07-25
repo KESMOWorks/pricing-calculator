@@ -1,0 +1,30 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  role="img"
+  aria-labelledby="kesmo-logo-title kesmo-logo-description"
+>
+  <title id="kesmo-logo-title">KESMO logo</title>
+
+  <desc id="kesmo-logo-description">
+    A geometric letter K made from yellow, blue, and navy shapes.
+  </desc>
+
+  <!-- Yellow precision accent -->
+  <path
+    fill="#fbbf24"
+    d="M24 24H96L24 96V24Z"
+  />
+
+  <!-- Main upward diagonal -->
+  <path
+    fill="#2563eb"
+    d="M24 152L152 24H216L80 160V232H24V152Z"
+  />
+
+  <!-- Lower K arm -->
+  <path
+    fill="#0f172a"
+    d="M112 160L152 120L232 200V232H184L112 160Z"
+  />
+</svg>
