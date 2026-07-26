@@ -1,5 +1,6 @@
-User-agent: *
+# KESMO Pricing Calculator
 
+User-agent: *
 Allow: /
 
 Sitemap: https://kesmoworks.github.io/pricing-calculator/sitemap.xml
