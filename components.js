@@ -95,8 +95,8 @@ function createSiteHeader() {
       <div class="page-container">
         <a
           class="site-name"
-          href="${KESMO_CONFIG.toolHomeUrl}"
-          aria-label="${KESMO_CONFIG.projectName} home"
+          href="${KESMO_CONFIG.kesmoHomeUrl}"
+          aria-label="KESMO home"
         >
           <img
             class="site-logo"
@@ -216,8 +216,8 @@ function createSiteFooter() {
         <div class="footer-brand">
           <a
             class="footer-site-brand"
-            href="${KESMO_CONFIG.toolHomeUrl}"
-            aria-label="${KESMO_CONFIG.projectName} home"
+            href="${KESMO_CONFIG.kesmoHomeUrl}"
+            aria-label="KESMO home"
           >
             <img
               class="footer-logo"
